@@ -317,6 +317,12 @@ LIB_SOURCES =                                                   \
   utilities/wal_filter.cc                                       \
   utilities/write_batch_with_index/write_batch_with_index.cc    \
   utilities/write_batch_with_index/write_batch_with_index_internal.cc    \
+  tools/db_bench_tool.cc                                        \
+  tools/simulated_hybrid_file_system.cc                         \
+  test_util/mock_time_env.cc                                    \
+  test_util/secondary_cache_test_util.cc                        \
+  test_util/testharness.cc                                      \
+  test_util/testutil.cc                                         \
 
 ifeq (,$(shell $(CXX) -fsyntax-only -maltivec -xc /dev/null 2>&1))
 LIB_SOURCES_ASM =\
