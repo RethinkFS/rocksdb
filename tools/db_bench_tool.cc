@@ -1345,7 +1345,7 @@ DEFINE_int64(
 DEFINE_int64(preserve_internal_time_seconds, 0,
              "Preserve the internal time information which stores with SST.");
 
-static std::shared_ptr<ROCKSDB_NAMESPACE::Env> env_guard;
+std::shared_ptr<ROCKSDB_NAMESPACE::Env> env_guard;
 
 ROCKSDB_NAMESPACE::Env* FLAGS_env = ROCKSDB_NAMESPACE::Env::Default();
 

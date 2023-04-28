@@ -12,3 +12,4 @@ int db_bench_tool(int argc, char** argv);
 }  // namespace ROCKSDB_NAMESPACE
 
 extern ROCKSDB_NAMESPACE::Env* FLAGS_env;
+extern std::shared_ptr<ROCKSDB_NAMESPACE::Env> env_guard;
