@@ -4,8 +4,11 @@
 //  (found in the LICENSE.Apache file in the root directory).
 #pragma once
 
+#include "env.h"
 #include "rocksdb/rocksdb_namespace.h"
 
 namespace ROCKSDB_NAMESPACE {
 int db_bench_tool(int argc, char** argv);
 }  // namespace ROCKSDB_NAMESPACE
+
+extern ROCKSDB_NAMESPACE::Env* FLAGS_env;

@@ -1347,7 +1347,7 @@ DEFINE_int64(preserve_internal_time_seconds, 0,
 
 static std::shared_ptr<ROCKSDB_NAMESPACE::Env> env_guard;
 
-static ROCKSDB_NAMESPACE::Env* FLAGS_env = ROCKSDB_NAMESPACE::Env::Default();
+ROCKSDB_NAMESPACE::Env* FLAGS_env = ROCKSDB_NAMESPACE::Env::Default();
 
 DEFINE_int64(stats_interval, 0,
              "Stats are reported every N operations when this is greater than "
