@@ -4,3 +4,7 @@
 [submodule "plugin/aquafs"]
 	path = plugin/aquafs
 	url = https://github.com/RethinkFS/aquafs
+[submodule "aquafs"]
+	url = git@github.com:RethinkFS/aquafs.git
+[submodule "zenfs"]
+	url = git@github.com:RethinkFS/zenfs.git
