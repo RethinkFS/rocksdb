@@ -2577,5 +2577,5 @@ aquafs-bench:
 	cmake -B build -S . -DROCKSDB_PLUGINS="aquafs zenfs" -DAQUAFS_STANDALONE=0 -DWITH_SNAPPY=1 -DAQUAFS_EXPORT_PROMETHEUS=1
 	cmake --build build -j$(JOBS)
 	mkdir -p /tmp/aquafs
-	sudo ./plugin/aquafs/aquafs mkfs --raids=raida:dev:nullb0,dev:nullb1 --aux-path /tmp/aquafs
-	sudo ./db_bench --fs_uri=aquafs://raida:dev:nullb0,dev:nullb1 --benchmarks=fillrandom --use_direct_io_for_flush_and_compaction --use_stderr_info_logger
+	sudo ./build/plugin/aquafs/aquafs mkfs --raids=raida:dev:nullb0,dev:nullb1 --aux-path /tmp/aquafs
+	sudo ./build/db_bench --fs_uri=aquafs://raida:dev:nullb0,dev:nullb1 --benchmarks=fillrandom --use_direct_io_for_flush_and_compaction --use_stderr_info_logger
