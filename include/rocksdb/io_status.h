@@ -147,6 +147,11 @@ class IOStatus : public Status {
   IOStatus(Code _code, SubCode _subcode, const Slice& msg, const Slice& msg2);
   IOStatus(Code _code, const Slice& msg, const Slice& msg2)
       : IOStatus(_code, kNone, msg, msg2) {}
+ public:
+  IOStatus(Code code, SubCode subcode, Severity sev, bool retryable,
+           bool dataLoss, unsigned char scope,
+           std::unique_ptr<const char[]> state)
+      : Status(code, subcode, sev, retryable, dataLoss, scope, std::move(state)) {}
 };
 
 inline IOStatus::IOStatus(Code _code, SubCode _subcode, const Slice& msg,

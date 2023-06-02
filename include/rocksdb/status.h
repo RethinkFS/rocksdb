@@ -496,6 +496,18 @@ class Status {
     checked_ = true;
 #endif  // ROCKSDB_ASSERT_STATUS_CHECKED
   }
+
+ public:
+  explicit Status(Code code, SubCode subcode, Severity sev, bool retryable,
+         bool dataLoss, unsigned char scope,
+         std::unique_ptr<const char[]> state)
+      : code_(code),
+        subcode_(subcode),
+        sev_(sev),
+        retryable_(retryable),
+        data_loss_(dataLoss),
+        scope_(scope),
+        state_(std::move(state)) {}
 };
 
 inline Status::Status(const Status& s)
