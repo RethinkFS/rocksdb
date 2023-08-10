@@ -5668,7 +5668,11 @@ Status VersionSet::GetCurrentManifestPath(const std::string& dbname,
   if (!s.ok()) {
     return s;
   }
-  if (fname.empty() || fname.back() != '\n') {
+  if (fname.empty()) {
+    return Status::Corruption("CURRENT file empty");
+  }
+  if (fname.back() != '\n') {
+    printf("CURRENT file %s length %lu, content %s", dbname.c_str(), fname.size(), fname.c_str());
     return Status::Corruption("CURRENT file does not end with newline");
   }
   // remove the trailing '\n'

@@ -2574,7 +2574,7 @@ ifneq ("$(ROCKS_DEP_RULES)", "")
 endif
 
 aquafs-bench:
-	cmake -B build -S . -DROCKSDB_PLUGINS="aquafs zenfs" -DAQUAFS_STANDALONE=0 -DWITH_SNAPPY=1 -DAQUAFS_EXPORT_PROMETHEUS=1
+	cmake -B build -S . -DROCKSDB_PLUGINS="AquaFS zenfs" -DWITH_SNAPPY=1 -DAQUAFS_EXPORT_PROMETHEUS=1 -DWITH_LIBURING=OFF
 	cmake --build build -j$(JOBS)
 	mkdir -p /tmp/aquafs
 	sudo ./build/plugin/aquafs/aquafs mkfs --raids=raida:dev:nullb0,dev:nullb1 --aux-path /tmp/aquafs
